@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Kaloricke Tabulky Lite</string>
+    <string name="app_name">Kalorické Tabulky Lite</string>
+    <string name="search">Vyhledávání</string>
+    <string name="detail">Detail</string>
 </resources>
