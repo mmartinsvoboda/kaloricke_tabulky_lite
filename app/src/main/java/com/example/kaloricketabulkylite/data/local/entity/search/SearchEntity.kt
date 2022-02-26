@@ -12,7 +12,7 @@ import org.simpleframework.xml.convert.Convert
 
 @Entity
 @Root(name = "potravina", strict = false)
-data class PotravinaEntity(
+data class SearchEntity(
     @PrimaryKey
     @field:Attribute(name = "guid_potravina") @param:Attribute(name = "guid_potravina")
     val guidPotravina: String,
@@ -36,15 +36,4 @@ data class PotravinaEntity(
     @Embedded(prefix = "energie_")
     @field:Element(name = "energie") @param:Element(name = "energie")
     val energie: Energie
-)
-
-@Root(name = "energie", strict = false)
-data class Energie(
-    @field:Attribute(name = "jedn", required = false) @param:Attribute(
-        name = "jedn",
-        required = false
-    )
-    val jedn: String?,
-    @field:Text(required = false) @param:Text(required = false)
-    val value: String?
 )

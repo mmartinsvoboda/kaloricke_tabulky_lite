@@ -14,7 +14,7 @@ class SearchViewModel @Inject constructor(
     val searchRepository: SearchRepository
 ) : ViewModel() {
 
-    private val _query = MutableStateFlow("")
+    private val _query = MutableStateFlow("Hobz")
     val query: StateFlow<String> = _query
 
     private val _searchResult = MutableStateFlow<Resource<SearchResponse>?>(null)

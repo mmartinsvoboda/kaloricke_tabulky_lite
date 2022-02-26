@@ -1,5 +1,6 @@
 package com.example.kaloricketabulkylite.ui.screens.search
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -17,6 +18,7 @@ import androidx.navigation.NavController
 import com.example.kaloricketabulkylite.R
 import com.example.kaloricketabulkylite.ui.components.ScaffoldKalorickeTabulkyLite
 import com.example.kaloricketabulkylite.ui.components.SpacerSmall
+import com.example.kaloricketabulkylite.ui.navigation.Screen
 import com.example.kaloricketabulkylite.ui.theme.KalorickeTabulkyLiteTheme
 import com.example.kaloricketabulkylite.utils.data.Resource
 import kotlinx.coroutines.launch
@@ -76,16 +78,23 @@ fun SearchScreen(
                                 modifier = Modifier.weight(1f),
                                 verticalArrangement = Arrangement.spacedBy(KalorickeTabulkyLiteTheme.paddings.defaultPadding)
                             ) {
-                                item { 
-                                    it.data?.potravina?.size?.let { 
-                                        Text(text = it.toString())
+                                item {
+                                    it.data?.potravina?.size?.let {
+                                        Text(
+                                            text = it.toString()
+                                        )
                                     }
                                 }
-                                
+
                                 if (it.data?.potravina?.isNotEmpty() == true) {
                                     items(it.data.potravina) {
                                         Text(
-                                            text = it.nazev
+                                            text = it.nazev,
+                                            modifier = Modifier.clickable {
+                                                navController.navigate(
+                                                    Screen.Detail.withArgs(it.guidPotravina)
+                                                )
+                                            }
                                         )
                                     }
                                 } else {

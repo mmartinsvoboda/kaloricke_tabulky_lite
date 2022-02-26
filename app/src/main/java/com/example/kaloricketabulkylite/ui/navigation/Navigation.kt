@@ -33,7 +33,9 @@ private fun NavGraphBuilder.addSearchScreen(
 private fun NavGraphBuilder.addDetailScreen(
     navController: NavController
 ) {
-    composable(Screen.Detail.route) {
-        DetailScreen(navController = navController)
+    composable(Screen.Detail.withArgs("{guid_potravina}")) { backStackEntry ->
+        val guidPotravina = backStackEntry.arguments?.getString("guid_potravina")!!
+
+        DetailScreen(guidPotravina = guidPotravina, navController = navController)
     }
 }

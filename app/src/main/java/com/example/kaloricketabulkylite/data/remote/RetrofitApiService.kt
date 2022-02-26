@@ -1,6 +1,7 @@
 package com.example.kaloricketabulkylite.data.remote
 
 import android.content.Context
+import com.example.kaloricketabulkylite.data.local.entity.potravina.PotravinaEntity
 import com.example.kaloricketabulkylite.data.remote.response.search.SearchResponse
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -15,6 +16,12 @@ interface RetrofitApiService {
         @Query("Q") query: String,
         @Query("pid") pid: String = "m4RSv0b1"
     ): Response<SearchResponse>
+
+    @GET("getPotravina.php")
+    suspend fun getPotravina(
+        @Query("GUID_Potravina") GUID_Potravina: String,
+        @Query("pid") pid: String = "m4RSv0b1"
+    ): Response<PotravinaEntity>
 
     companion object {
         private var retrofit: Retrofit? = null
