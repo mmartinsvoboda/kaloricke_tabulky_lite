@@ -1,4 +1,4 @@
-package com.example.kaloricketabulkylite.ui.theme
+package com.example.kaloricketabulkylite.ui.theme.atr
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

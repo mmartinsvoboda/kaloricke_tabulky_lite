@@ -1,4 +1,4 @@
-package com.example.kaloricketabulkylite.ui.theme
+package com.example.kaloricketabulkylite.ui.theme.atr
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
