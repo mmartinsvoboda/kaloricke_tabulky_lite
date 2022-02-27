@@ -6,12 +6,10 @@ import org.simpleframework.xml.Root
 import org.simpleframework.xml.Text
 import org.simpleframework.xml.convert.Convert
 
-@Root(name = "jednotka", strict = false)
+@Root(strict = false)
 data class Jednotka(
-    @field:Attribute(name = "nasobek", required = false) @param:Attribute(
-        name = "nasobek",
-        required = false
-    )
+    @field:Attribute(name = "nasobek", required = false)
+    @param:Attribute(name = "nasobek", required = false)
     @Convert(LongConverter::class)
     val nasobek: Long?,
     @field:Text(required = false) @param:Text(required = false)

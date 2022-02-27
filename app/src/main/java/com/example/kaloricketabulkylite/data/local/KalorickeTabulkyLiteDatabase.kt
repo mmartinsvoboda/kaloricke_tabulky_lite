@@ -15,7 +15,7 @@ import com.example.kaloricketabulkylite.data.local.entity.search.SearchEntity
         PotravinaEntity::class
     ],
     exportSchema = false,
-    version = 2261628 // MddHHmm
+    version = 2271246 // MddHHmm
 )
 abstract class KalorickeTabulkyLiteDatabase : RoomDatabase() {
 
