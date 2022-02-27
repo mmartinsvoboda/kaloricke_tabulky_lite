@@ -23,10 +23,7 @@ class MainActivity : ComponentActivity() {
         val splashScreen = installSplashScreen()
 
         setContent {
-            KalorickeTabulkyLiteTheme(
-                lightColorPalette = KalorickeTabulkyLiteTheme.colors,
-                darkColorPalette = KalorickeTabulkyLiteTheme.colors
-            ) {
+            KalorickeTabulkyLiteTheme() {
                 Navigation()
             }
         }

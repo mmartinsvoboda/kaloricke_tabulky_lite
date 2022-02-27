@@ -8,6 +8,8 @@ import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.unit.dp
+import com.example.kaloricketabulkylite.ui.theme.themes.DarkTheme
+import com.example.kaloricketabulkylite.ui.theme.themes.LightTheme
 import cz.is4uma.moje_studium.ui.theme.attr.*
 import cz.is4uma.moje_studium.ui.theme.attr.LocalDarkMode
 import cz.is4uma.moje_studium.ui.theme.attr.LocalElevations
@@ -15,15 +17,13 @@ import cz.is4uma.moje_studium.ui.theme.attr.LocalPaddings
 
 @Composable
 fun KalorickeTabulkyLiteTheme(
-    lightColorPalette: Colors,
-    darkColorPalette: Colors,
     content: @Composable () -> Unit
 ) {
 
     val colors = if (isSystemInDarkTheme()) {
-        darkColorPalette
+        DarkTheme.DarkPalette
     } else {
-        lightColorPalette
+        LightTheme.LightPalette
     }
 
     CompositionLocalProvider(
