@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
+import com.example.kaloricketabulkylite.data.local.entity.potravina.PotravinaEntity
 import com.example.kaloricketabulkylite.ui.components.*
 import com.example.kaloricketabulkylite.ui.screens.detail.composables.FavoriteButton
 import com.example.kaloricketabulkylite.ui.screens.detail.composables.Hodnoty
@@ -38,6 +39,10 @@ fun DetailScreen(
     navController: NavController,
     model: DetailViewModel = hiltViewModel()
 ) {
+    val potravinaEntity = remember {
+        mutableStateOf<PotravinaEntity?>(null)
+    }
+
     Box(
         contentAlignment = Alignment.TopStart
     ) {
@@ -56,6 +61,8 @@ fun DetailScreen(
                     Text(text = "Potravina nebyla nalezena. :(")
                 }
             ) { potravina ->
+                potravinaEntity.value = potravina
+
                 if (potravina == null) {
                     Text(text = "Potravina nebyla nalezena. :(")
                 } else {
@@ -125,8 +132,6 @@ fun DetailScreen(
                                                 Text(
                                                     text = potravina.nazev.replaceFirstChar { it.uppercase() },
                                                     modifier = Modifier.weight(1f),
-                                                    maxLines = 2,
-                                                    overflow = TextOverflow.Ellipsis,
                                                     style = KalorickeTabulkyLiteTheme.typography.h4,
                                                     fontWeight = FontWeight.Bold
                                                 )
@@ -260,31 +265,31 @@ fun DetailScreen(
                         }
                     }
                 }
-
-                if (!potravina?.foto.isNullOrEmpty()) {
-                    val surface = KalorickeTabulkyLiteTheme.colors.surface
-                    Box(
-                        Modifier
-                            .fillMaxSize()
-                            .drawWithCache {
-                                val gradient = Brush.verticalGradient(
-                                    colors = listOf(
-                                        surface.copy(alpha = 0.8f),
-                                        Color.Transparent
-                                    ),
-                                    startY = 0F,
-                                    endY = size.height * 0.15f
-                                )
-
-                                onDrawWithContent {
-                                    drawRect(brush = gradient)
-                                }
-                            }
-                    )
-                }
             }
-
         }
+
+        if (!potravinaEntity.value?.foto.isNullOrEmpty()) {
+            val surface = KalorickeTabulkyLiteTheme.colors.surface
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .drawWithCache {
+                        val gradient = Brush.verticalGradient(
+                            colors = listOf(
+                                surface.copy(alpha = 0.8f),
+                                Color.Transparent
+                            ),
+                            startY = 0F,
+                            endY = size.height * 0.15f
+                        )
+
+                        onDrawWithContent {
+                            drawRect(brush = gradient)
+                        }
+                    }
+            )
+        }
+
         NavigationIconTopAppBarKalorickeTabulkyLite(navController)
     }
 }
