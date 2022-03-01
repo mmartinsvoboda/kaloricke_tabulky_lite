@@ -1,7 +1,6 @@
 package com.example.kaloricketabulkylite.data.local.entity.search
 
 import com.example.kaloricketabulkylite.data.local.converters.FloatConverter
-import com.example.kaloricketabulkylite.data.local.converters.LongConverter
 import org.simpleframework.xml.Attribute
 import org.simpleframework.xml.Root
 import org.simpleframework.xml.Text

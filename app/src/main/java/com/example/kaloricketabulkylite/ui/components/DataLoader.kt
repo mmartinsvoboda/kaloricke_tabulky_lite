@@ -6,7 +6,6 @@
 
 package com.example.kaloricketabulkylite.ui.components
 
-import android.accounts.AuthenticatorException
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -27,7 +26,6 @@ import com.example.kaloricketabulkylite.utils.data.UnsuccessfulCallException
 import com.example.kaloricketabulkylite.utils.data.isDataNullOrEmptyList
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
 import timber.log.Timber
 import java.io.EOFException
 import java.net.UnknownHostException
@@ -153,7 +151,8 @@ private fun <T> ProcessError(
             }
         }
         is EOFException, is UnsuccessfulCallException -> {
-            val message = stringResource(com.example.kaloricketabulkylite.R.string.data_initialization_error)
+            val message =
+                stringResource(com.example.kaloricketabulkylite.R.string.data_initialization_error)
             LaunchedEffect(true) {
                 if (scaffoldState.snackbarHostState.currentSnackbarData?.message != message) {
                     scaffoldState.snackbarHostState.showSnackbar(

@@ -25,8 +25,8 @@ fun StitkyExpandableCard(
         )
         SpacerSmall()
 
-        CardKalorickeTabulkyLite() {
-            Column() {
+        CardKalorickeTabulkyLite {
+            Column {
                 stitkyList.forEach {
                     ExpandableCard(
                         title = it.nazev ?: ""

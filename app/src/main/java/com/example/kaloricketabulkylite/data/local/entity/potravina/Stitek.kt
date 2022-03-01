@@ -5,7 +5,7 @@ import org.simpleframework.xml.Root
 import org.simpleframework.xml.Text
 
 @Root(strict = false)
-data class Stitek (
+data class Stitek(
     @field:Attribute(name = "nazev", required = false)
     @param:Attribute(name = "nazev", required = false)
     val nazev: String?,

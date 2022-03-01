@@ -4,7 +4,9 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.example.kaloricketabulkylite.data.local.converters.*
+import com.example.kaloricketabulkylite.data.local.converters.BooleanConverter
+import com.example.kaloricketabulkylite.data.local.converters.JednotkaListConverter
+import com.example.kaloricketabulkylite.data.local.converters.StitekListConverter
 import org.simpleframework.xml.Attribute
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.ElementList

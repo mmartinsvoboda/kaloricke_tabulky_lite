@@ -7,7 +7,6 @@ import com.example.kaloricketabulkylite.data.local.converters.BooleanConverter
 import org.simpleframework.xml.Attribute
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
-import org.simpleframework.xml.Text
 import org.simpleframework.xml.convert.Convert
 
 @Entity

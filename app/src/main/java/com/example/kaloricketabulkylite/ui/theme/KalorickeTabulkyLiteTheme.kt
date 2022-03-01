@@ -11,9 +11,6 @@ import androidx.compose.ui.unit.dp
 import com.example.kaloricketabulkylite.ui.theme.themes.DarkTheme
 import com.example.kaloricketabulkylite.ui.theme.themes.LightTheme
 import cz.is4uma.moje_studium.ui.theme.attr.*
-import cz.is4uma.moje_studium.ui.theme.attr.LocalDarkMode
-import cz.is4uma.moje_studium.ui.theme.attr.LocalElevations
-import cz.is4uma.moje_studium.ui.theme.attr.LocalPaddings
 
 @Composable
 fun KalorickeTabulkyLiteTheme(

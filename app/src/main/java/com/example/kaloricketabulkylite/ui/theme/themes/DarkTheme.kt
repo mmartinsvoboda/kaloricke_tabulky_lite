@@ -1,7 +1,6 @@
 package com.example.kaloricketabulkylite.ui.theme.themes
 
 import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
 
 object DarkTheme {

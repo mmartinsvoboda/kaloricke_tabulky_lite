@@ -8,7 +8,7 @@ import org.simpleframework.xml.Text
 
 @Root(strict = false)
 data class Hodnoty(
-    @field:Element(required = false, name = "energie") 
+    @field:Element(required = false, name = "energie")
     @param:Element(required = false, name = "energie")
     @Embedded(prefix = "energie")
     val energie: Hodnota?,

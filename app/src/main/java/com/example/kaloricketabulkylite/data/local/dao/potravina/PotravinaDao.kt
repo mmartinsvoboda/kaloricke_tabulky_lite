@@ -4,7 +4,6 @@ import androidx.room.Dao
 import androidx.room.Query
 import com.example.kaloricketabulkylite.data.local.dao.BaseDao
 import com.example.kaloricketabulkylite.data.local.entity.potravina.PotravinaEntity
-import com.example.kaloricketabulkylite.data.local.entity.search.SearchEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
