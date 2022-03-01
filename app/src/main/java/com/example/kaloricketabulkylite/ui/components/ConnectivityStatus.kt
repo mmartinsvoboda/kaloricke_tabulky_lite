@@ -69,7 +69,7 @@ fun ConnectivityStatusBox(isConnected: Boolean) {
         modifier = Modifier
             .background(backgroundColor)
             .fillMaxWidth()
-            .padding(KalorickeTabulkyLiteTheme.paddings.tinyPadding),
+            .padding(bottom = KalorickeTabulkyLiteTheme.paddings.smallPadding),
         contentAlignment = Alignment.Center
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {

@@ -82,6 +82,7 @@ fun PotravinaCard(
                             horizontal = KalorickeTabulkyLiteTheme.paddings.defaultPadding,
                             vertical = KalorickeTabulkyLiteTheme.paddings.smallPadding
                         )
+                        .fillMaxHeight()
                         .height(IntrinsicSize.Max)
                         .weight(1f)
                 ) {

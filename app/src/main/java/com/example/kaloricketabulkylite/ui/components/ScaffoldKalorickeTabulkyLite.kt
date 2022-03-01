@@ -4,7 +4,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
+import com.example.kaloricketabulkylite.ui.theme.KalorickeTabulkyLiteTheme
 
 @Composable
 fun ScaffoldKalorickeTabulkyLite(
@@ -18,6 +20,7 @@ fun ScaffoldKalorickeTabulkyLite(
     displayTopAppBar: Boolean = true,
     navController: NavController,
     scaffoldState: ScaffoldState = rememberScaffoldState(),
+    backgroundColor: Color = KalorickeTabulkyLiteTheme.colors.background,
     content: @Composable (scaffoldState: ScaffoldState) -> Unit
 ) {
     Scaffold(
@@ -38,7 +41,8 @@ fun ScaffoldKalorickeTabulkyLite(
         floatingActionButton = floatingActionButton,
         drawerContent = drawerContent,
         snackbarHost = snackBarHost,
-        modifier = modifier
+        modifier = modifier,
+        backgroundColor = backgroundColor
     ) { paddingValues ->
         Column(
             Modifier
