@@ -6,6 +6,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
+import com.example.kaloricketabulkylite.ui.theme.KalorickeTabulkyLiteTheme
 
 @Composable
 fun NavigationIconTopAppBarKalorickeTabulkyLite(navController: NavController) {
@@ -16,7 +17,8 @@ fun NavigationIconTopAppBarKalorickeTabulkyLite(navController: NavController) {
     ) {
         Icon(
             imageVector = Icons.Default.ArrowBack,
-            contentDescription = null
+            contentDescription = null,
+            tint = KalorickeTabulkyLiteTheme.colors.onSurface
         )
     }
 }
