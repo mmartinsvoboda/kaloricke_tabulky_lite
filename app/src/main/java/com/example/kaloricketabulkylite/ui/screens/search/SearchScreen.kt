@@ -79,7 +79,7 @@ fun SearchScreen(
                                         modifier = Modifier.fillMaxSize(),
                                         contentAlignment = Alignment.Center
                                     ) {
-                                        Text(text = "Pro zadaný výraz nebylo nic nalezeno.")
+                                        Text(text = stringResource(R.string.nothing_has_been_found))
                                     }
                                 }
                             }
@@ -95,7 +95,7 @@ fun SearchScreen(
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
                                 Text(
-                                    "Chyba při stahování dat :(",
+                                    stringResource(R.string.problem_occured_while_downloading_data),
                                     textAlign = TextAlign.Center
                                 )
                                 SpacerDefault()
@@ -108,7 +108,7 @@ fun SearchScreen(
                                     shape = RoundedCornerShape(8.dp)
                                 ) {
                                     Text(
-                                        text = "Zkusit znovu".uppercase()
+                                        text = stringResource(R.string.try_again).uppercase()
                                     )
                                 }
                             }
@@ -142,7 +142,7 @@ fun SearchScreen(
                     SpacerSmall()
 
                     Text(
-                        text = "Můžete začít hledat! :)",
+                        text = stringResource(R.string.start_searching),
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(horizontal = KalorickeTabulkyLiteTheme.paddings.defaultPadding)
                     )

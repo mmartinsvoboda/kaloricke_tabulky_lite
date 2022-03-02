@@ -12,7 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.kaloricketabulkylite.R
 import com.example.kaloricketabulkylite.ui.theme.KalorickeTabulkyLiteTheme
 import kotlinx.coroutines.flow.StateFlow
 
@@ -30,7 +32,7 @@ fun SearchBar(
         modifier = modifier
             .fillMaxWidth(),
         placeholder = {
-            Text(text = "Hledat")
+            Text(text = stringResource(R.string.to_search))
         },
         leadingIcon = {
             Icon(

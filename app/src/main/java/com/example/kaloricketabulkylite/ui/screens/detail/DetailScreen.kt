@@ -20,12 +20,15 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
+import com.example.kaloricketabulkylite.R
 import com.example.kaloricketabulkylite.data.local.entity.potravina.PotravinaEntity
 import com.example.kaloricketabulkylite.ui.components.*
 import com.example.kaloricketabulkylite.ui.screens.detail.composables.FavoriteButton
@@ -58,13 +61,21 @@ fun DetailScreen(
                 scaffoldState = scaffoldState,
                 navController = navController,
                 noDataContent = {
-                    Text(text = "Potravina nebyla nalezena. :(")
+                    Text(
+                        text = stringResource(R.string.item_not_found),
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center
+                    )
                 }
             ) { potravina ->
                 potravinaEntity.value = potravina
 
                 if (potravina == null) {
-                    Text(text = "Potravina nebyla nalezena. :(")
+                    Text(
+                        text = stringResource(R.string.item_not_found),
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center
+                    )
                 } else {
                     Box(
                         modifier = Modifier,
@@ -207,7 +218,7 @@ fun DetailScreen(
                                             if (!potravina.popisPrakticke.isNullOrBlank()) {
                                                 SpacerDefault()
                                                 Text(
-                                                    text = "Praktické informace",
+                                                    text = stringResource(R.string.info_practical),
                                                     style = KalorickeTabulkyLiteTheme.typography.h6
                                                 )
                                                 SpacerTiny()
@@ -221,7 +232,7 @@ fun DetailScreen(
                                             if (!potravina.popisZdravi.isNullOrBlank()) {
                                                 SpacerDefault()
                                                 Text(
-                                                    text = "Zdraví",
+                                                    text = stringResource(R.string.info_health),
                                                     style = KalorickeTabulkyLiteTheme.typography.h6
                                                 )
                                                 SpacerTiny()
@@ -236,22 +247,22 @@ fun DetailScreen(
                                             Hodnoty(potravina)
 
                                             StitkyExpandableCard(
-                                                title = "Éčka",
+                                                title = stringResource(R.string.ecka),
                                                 stitkyList = potravina.stitkyEcka
                                             )
 
                                             StitkyExpandableCard(
-                                                title = "Minerály",
+                                                title = stringResource(R.string.minerals),
                                                 stitkyList = potravina.stitkyMineraly
                                             )
 
                                             StitkyExpandableCard(
-                                                title = "Vitamíny",
+                                                title = stringResource(R.string.vitamins),
                                                 stitkyList = potravina.stitkyVitaminy
                                             )
 
                                             StitkyExpandableCard(
-                                                title = "Zdraví",
+                                                title = stringResource(R.string.health),
                                                 stitkyList = potravina.stitkyZdravi
                                             )
                                         }
